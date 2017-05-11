@@ -1,0 +1,44 @@
+{
+    "appswift": {
+        "continueTheming": true,
+        "shouldCommitCode": true,
+        "scmType": "git",
+        "scmUserName": "kkorada",
+        "scmPwd": "India@123",
+        "scmUrl": "http://10.102.22.61:9292/adc/commerzbank.git"
+    },
+    "cicdSwift": {
+        "jenkinsProps": {
+            "uploadPlugins": false,
+            "scmCredId": "1494501516036scm",
+            "jenkinsProtocol": "http://",
+            "jenkinsPath": "/",
+            "jenkinsHostName": "10.102.22.60",
+            "jenkinsPort": 9999,
+            "jenkinsUserId": "kkorada",
+            "jenkinsPassword": "kkorada",
+            "cdoeMavenName": "maven3.3.3",
+            "cdoeSonarName": "sonar@10.102.22.59",
+            "scm": "git",
+            "codebaseUrl": "http://10.102.22.61:9292/adc/commerzbank.git",
+            "scmUserId": "kkorada",
+            "scmPwd": "India@123"
+        },
+        "cfProps": {
+            "cfApiEndPoint": "http://api.run.pivotal.io",
+            "cfCredId": "1494501516036cf",
+            "createDbService": true,
+            "cfProfile": "prod",
+            "dbServiceName": "cleardb",
+            "dbServicePlanName": "spark",
+            "noOfInstances": 1,
+            "appMemory": 1024,
+            "appDiskQuota": 1024,
+            "cfOrg": "AB-Capgemini",
+            "cfSpace": "dev",
+            "cfUserID": "vgupt007@gmail.com",
+            "cfPwd": "@kanbay123",
+            "cfAppName": "commerzbank"
+        }
+    }
+}
