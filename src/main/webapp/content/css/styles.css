@@ -1,0 +1,177 @@
+navbar-brand img {
+    height: 32px;
+}
+
+.navbar,
+.navbar.navbar-default {
+    border-bottom: 2px solid #fc3;
+    background-color: #fff;
+    color: #000;
+}
+
+.navbar .navbar-nav>.active>a,
+.navbar .navbar-nav>.active>a:hover,
+.navbar .navbar-nav>.active>a:focus {
+    color: #000;
+    background-color: #fc3;
+}
+
+.navbar .dropdown-menu .active>a,
+.navbar.navbar-default .dropdown-menu .active>a {
+    color: #000;
+    background: #e5e5e5;
+}
+
+.navbar .dropdown-menu .active>a:hover,
+.navbar.navbar-default .dropdown-menu .active>a:hover,
+.navbar .dropdown-menu .active>a:focus,
+.navbar.navbar-default .dropdown-menu .active>a:focus {
+    color: #000;
+}
+
+.navbar .dropdown-menu li>a:hover,
+.navbar.navbar-default .dropdown-menu li>a:hover,
+.navbar .dropdown-menu li>a:focus,
+.navbar.navbar-default .dropdown-menu li>a:focus {
+    color: #000;
+}
+
+
+/*!*!* inputs *!*!*/
+
+.form-group.is-focused .form-control {
+    outline: none;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fc3), to(#fc3)), -webkit-gradient(linear, left top, left bottom, from(#e5e5e5), to(#e5e5e5));
+    background-image: -webkit-linear-gradient(#fc3, #fc3), -webkit-linear-gradient(#e5e5e5, #e5e5e5);
+    background-image: -o-linear-gradient(#fc3, #fc3), -o-linear-gradient(#e5e5e5, #e5e5e5);
+    background-image: linear-gradient(#fc3, #fc3), linear-gradient(#e5e5e5, #e5e5e5);
+    -webkit-background-size: 100% 2px, 100% 1px;
+    background-size: 100% 2px, 100% 1px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.form-group label,
+.form-group label.control-label {
+    color: #fc3 !important;
+}
+
+.form-group.is-focused label,
+.form-group.is-focused label.control-label {
+    color: #fc3 !important;
+}
+
+.radio input[type=radio]:checked~.check {
+    background-color: #fc3 !important;
+}
+
+.radio input[type=radio]:checked~.circle {
+    border-color: #fc3 !important;
+}
+
+
+/*===================================================*/
+
+.cb-margin {
+    margin-top: 70px;
+}
+
+
+/*.cb-btn {}*/
+
+
+/*swiper css*/
+
+.container-sc {
+    margin: 0 auto;
+    width: 250px;
+    height: 200px;
+    position: relative;
+    perspective: 1400px;
+}
+
+.carousel {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.item {
+    display: block;
+    position: absolute;
+    background: #000;
+    width: 250px;
+    height: 200px;
+    line-height: 200px;
+    font-size: 5em;
+    text-align: center;
+    color: #FFF;
+    opacity: 0.95;
+    border-radius: 10px;
+}
+
+.passive {
+    background: #E5E5E5;
+}
+
+.active-sc {
+    background: #fc3;
+}
+
+.a {
+    transform: rotateY(0deg) translateZ(250px);
+}
+
+.b {
+    transform: rotateY(72deg) translateZ(250px);
+}
+
+.c {
+    transform: rotateY(144deg) translateZ(250px);
+}
+
+.d {
+    transform: rotateY(216deg) translateZ(250px);
+}
+
+.e {
+    transform: rotateY(288deg) translateZ(250px);
+}
+
+.next,
+.prev {
+    color: #444;
+    position: absolute;
+    top: 100px;
+    padding: 1em 2em;
+    cursor: pointer;
+    background: #CCC;
+    border-radius: 5px;
+    border-top: 1px solid #FFF;
+    box-shadow: 0 5px 0 #999;
+    transition: box-shadow 0.1s, top 0.1s;
+}
+
+.next:hover,
+.prev:hover {
+    color: #000;
+}
+
+.next:active,
+.prev:active {
+    top: 104px;
+    box-shadow: 0 1px 0 #999;
+}
+
+.next {
+    right: 5em;
+}
+
+.prev {
+    left: 5em;
+}

@@ -1,4 +1,4 @@
-<div>
+<div class="well">
     <h2>Active sessions for [<b>{{vm.account.login}}</b>]</h2>
 
     <div class="alert alert-success" ng-show="vm.success">
@@ -24,9 +24,7 @@
                     <td>{{session.userAgent}}</td>
                     <td>{{session.formattedTokenDate}}</td>
                     <td>
-                        <button type="submit"
-                                class="btn btn-primary"
-                                ng-click="vm.invalidate(session.series)">
+                        <button type="submit" class="btn btn-primary" ng-click="vm.invalidate(session.series)">
                                  Invalidate
                         </button>
                     </td>

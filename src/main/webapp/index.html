@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,26 +18,29 @@
     <!-- endbuild -->
     <!-- build:css content/css/main.css -->
     <link rel="stylesheet" href="content/css/main.css">
+    <link rel="stylesheet" href="content/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css" />
     <!-- endbuild -->
 </head>
+
 <body ng-app="commerzbankApp" ng-strict-di>
     <!--[if lt IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    
+
     <div ui-view="navbar" ng-cloak></div>
     <div class="container">
-        <div class="well" ui-view="content">
+        <div ui-view="content">
             <!-- Angular views -->
         </div>
 
         <div class="footer" ng-cloak>
             <div class="row">
-    <div class="col-md-12">
-        <img src="content/images/capg_logo.png" width="130px">
-        <div class="pull-right"><b>Capgemini Copyright &copy; 2016</b></div>
-    </div>
-</div>
+                <div class="col-md-12">
+                    <img src="content/images/capg_logo.png" width="130px">
+                    <div class="pull-right"><b>Capgemini Copyright &copy; 2016</b></div>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -111,6 +115,7 @@
     <script src="app/components/util/data-util.service.js"></script>
     <script src="app/components/util/capitalize.filter.js"></script>
     <script src="app/components/util/base64.service.js"></script>
+    <script src="app/components/login/login.state.js"></script>
     <script src="app/components/login/login.service.js"></script>
     <script src="app/components/login/login.controller.js"></script>
     <script src="app/components/form/show-validation.directive.js"></script>
@@ -173,8 +178,14 @@
     <script src="app/account/activate/activate.state.js"></script>
     <script src="app/account/activate/activate.controller.js"></script>
     <script src="app/account/account.state.js"></script>
+    <script src="app/views/views.state.js"></script>
+    <script src="app/views/information/information.state.js"></script>
+    <script src="app/views/information/information.controller.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+
     <!-- endinject -->
     <!-- endbuild -->
 
 </body>
+
 </html>

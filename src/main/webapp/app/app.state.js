@@ -5,9 +5,9 @@
         .module('commerzbankApp')
         .config(stateConfig);
 
-    stateConfig.$inject = ['$stateProvider'];
+    stateConfig.$inject = ['$stateProvider','$urlRouterProvider'];
 
-    function stateConfig($stateProvider) {
+    function stateConfig($stateProvider,$urlRouterProvider) {
         $stateProvider.state('app', {
             abstract: true,
             views: {
@@ -25,5 +25,6 @@
                 ]
             }
         });
+        $urlRouterProvider.otherwise('login');
     }
 })();

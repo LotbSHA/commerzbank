@@ -1,6 +1,11 @@
-<div>
+<div class="well">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+            <div>
+                <button type="button" class="btn cb-btn" ui-sref="login" data-toggle="tooltip" title="Go to Login!">
+                    <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                </button>
+            </div>
             <h1>Reset your password</h1>
 
             <div class="alert alert-danger" ng-show="vm.errorEmailNotExists">
@@ -18,23 +23,18 @@
             <form ng-show="!vm.success" name="form" role="form" novalidate ng-submit="vm.requestReset()" show-validation>
                 <div class="form-group">
                     <label class="control-label" for="email">E-mail</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Your e-mail"
-                           ng-model="vm.resetAccount.email" ng-minlength=5 ng-maxlength=100 required>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Your e-mail" ng-model="vm.resetAccount.email" ng-minlength=5 ng-maxlength=100 required>
                     <div ng-show="form.email.$dirty && form.email.$invalid">
-                        <p class="help-block"
-                           ng-show="form.email.$error.required">
+                        <p class="help-block" ng-show="form.email.$error.required">
                             Your e-mail is required.
                         </p>
-                        <p class="help-block"
-                           ng-show="form.email.$error.email">
+                        <p class="help-block" ng-show="form.email.$error.email">
                             Your e-mail is invalid.
                         </p>
-                        <p class="help-block"
-                           ng-show="form.email.$error.minlength">
+                        <p class="help-block" ng-show="form.email.$error.minlength">
                             Your e-mail is required to be at least 5 characters.
                         </p>
-                        <p class="help-block"
-                           ng-show="form.email.$error.maxlength">
+                        <p class="help-block" ng-show="form.email.$error.maxlength">
                             Your e-mail cannot be longer than 100 characters.
                         </p>
                     </div>

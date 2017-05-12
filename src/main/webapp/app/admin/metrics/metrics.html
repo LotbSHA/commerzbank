@@ -1,4 +1,4 @@
-<div>
+<div class="well">
     <h2>Application Metrics</h2>
     <p>
         <button type="button" class="btn btn-primary" ng-click="vm.refresh()"><span class="glyphicon glyphicon-refresh"></span>&nbsp;<span>Refresh</span></button>
@@ -63,78 +63,80 @@
     <div class="well well-lg" ng-show="vm.updatingMetrics">Updating...</div>
 
     <h3>HTTP requests (events per second)</h3>
-        <p><span>Active requests</span> <b>{{vm.metrics.counters['com.codahale.metrics.servlet.InstrumentedFilter.activeRequests'].count | number:0}}</b> - <span>Total requests</span> <b>{{vm.metrics.timers['com.codahale.metrics.servlet.InstrumentedFilter.requests'].count | number:0}}</b></p>
+    <p><span>Active requests</span> <b>{{vm.metrics.counters['com.codahale.metrics.servlet.InstrumentedFilter.activeRequests'].count | number:0}}</b> - <span>Total requests</span> <b>{{vm.metrics.timers['com.codahale.metrics.servlet.InstrumentedFilter.requests'].count | number:0}}</b></p>
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
-            <tr>
-                <th>Code</th>
-                <th>Count</th>
-                <th class="text-right">Mean</th>
-                <th class="text-right"><span>Average</span> (1 min)</th>
-                <th class="text-right"><span>Average</span> (5 min)</th>
-                <th class="text-right"><span>Average</span> (15 min)</th>
-            </tr>
+                <tr>
+                    <th>Code</th>
+                    <th>Count</th>
+                    <th class="text-right">Mean</th>
+                    <th class="text-right"><span>Average</span> (1 min)</th>
+                    <th class="text-right"><span>Average</span> (5 min)</th>
+                    <th class="text-right"><span>Average</span> (15 min)</th>
+                </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>OK</td>
-                <td>
-                    <uib-progressbar min="0" max="vm.metrics.timers['com.codahale.metrics.servlet.InstrumentedFilter.requests'].count" value="vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.ok'].count" class="progress-striped active" type="success">
-                        <span>{{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.ok'].count}}</span>
-                    </uib-progressbar>
-                </td>
-                <td class="text-right">
-                    {{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.ok'].mean_rate | number:2}}
-                </td>
-                <td class="text-right">{{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.ok'].m1_rate | number:2}}
-                </td>
-                <td class="text-right">{{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.ok'].m5_rate | number:2}}
-                </td>
-                <td class="text-right">
-                    {{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.ok'].m15_rate | number:2}}
-                </td>
-            </tr>
-            <tr>
-                <td>Not Found</td>
-                <td>
-                    <uib-progressbar min="0" max="vm.metrics.timers['com.codahale.metrics.servlet.InstrumentedFilter.requests'].count" value="vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.notFound'].count" class="progress-striped active" type="success">
-                        <span>{{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.notFound'].count}}</span>
-                    </uib-progressbar>
-                </td>
-                <td class="text-right">
-                    {{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.notFound'].mean_rate | number:2}}
-                </td>
-                <td class="text-right">
-                    {{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.notFound'].m1_rate | number:2}}
-                </td>
-                <td class="text-right">
-                    {{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.notFound'].m5_rate | number:2}}
-                </td>
-                <td class="text-right">
-                    {{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.notFound'].m15_rate | number:2}}
-                </td>
-            </tr>
-            <tr>
-                <td>Server error</td>
-                <td>
-                    <uib-progressbar min="0" max="vm.metrics.timers['com.codahale.metrics.servlet.InstrumentedFilter.requests'].count" value="vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.serverError'].count" class="progress-striped active" type="success">
-                        <span>{{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.serverError'].count}}</span>
-                    </uib-progressbar>
-                </td>
-                <td class="text-right">
-                    {{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.serverError'].mean_rate | number:2}}
-                </td>
-                <td class="text-right">
-                    {{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.serverError'].m1_rate | number:2}}
-                </td>
-                <td class="text-right">
-                    {{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.serverError'].m5_rate | number:2}}
-                </td>
-                <td class="text-right">
-                    {{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.serverError'].m15_rate | number:2}}
-                </td>
-            </tr>
+                <tr>
+                    <td>OK</td>
+                    <td>
+                        <uib-progressbar min="0" max="vm.metrics.timers['com.codahale.metrics.servlet.InstrumentedFilter.requests'].count" value="vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.ok'].count" class="progress-striped active" type="success">
+                            <span>{{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.ok'].count}}</span>
+                        </uib-progressbar>
+                    </td>
+                    <td class="text-right">
+                        {{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.ok'].mean_rate | number:2}}
+                    </td>
+                    <td class="text-right">{{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.ok'].m1_rate | number:2}}
+                    </td>
+                    <td class="text-right">{{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.ok'].m5_rate | number:2}}
+                    </td>
+                    <td class="text-right">
+                        {{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.ok'].m15_rate | number:2}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Not Found</td>
+                    <td>
+                        <uib-progressbar min="0" max="vm.metrics.timers['com.codahale.metrics.servlet.InstrumentedFilter.requests'].count" value="vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.notFound'].count" class="progress-striped active"
+                            type="success">
+                            <span>{{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.notFound'].count}}</span>
+                        </uib-progressbar>
+                    </td>
+                    <td class="text-right">
+                        {{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.notFound'].mean_rate | number:2}}
+                    </td>
+                    <td class="text-right">
+                        {{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.notFound'].m1_rate | number:2}}
+                    </td>
+                    <td class="text-right">
+                        {{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.notFound'].m5_rate | number:2}}
+                    </td>
+                    <td class="text-right">
+                        {{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.notFound'].m15_rate | number:2}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Server error</td>
+                    <td>
+                        <uib-progressbar min="0" max="vm.metrics.timers['com.codahale.metrics.servlet.InstrumentedFilter.requests'].count" value="vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.serverError'].count" class="progress-striped active"
+                            type="success">
+                            <span>{{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.serverError'].count}}</span>
+                        </uib-progressbar>
+                    </td>
+                    <td class="text-right">
+                        {{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.serverError'].mean_rate | number:2}}
+                    </td>
+                    <td class="text-right">
+                        {{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.serverError'].m1_rate | number:2}}
+                    </td>
+                    <td class="text-right">
+                        {{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.serverError'].m5_rate | number:2}}
+                    </td>
+                    <td class="text-right">
+                        {{vm.metrics.meters['com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.serverError'].m15_rate | number:2}}
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -143,60 +145,60 @@
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
-            <tr>
-                <th>Service name</th>
-                <th class="text-right">Count</th>
-                <th class="text-right">Mean</th>
-                <th class="text-right">Min</th>
-                <th class="text-right">p50</th>
-                <th class="text-right">p75</th>
-                <th class="text-right">p95</th>
-                <th class="text-right">p99</th>
-                <th class="text-right">Max</th>
-            </tr>
+                <tr>
+                    <th>Service name</th>
+                    <th class="text-right">Count</th>
+                    <th class="text-right">Mean</th>
+                    <th class="text-right">Min</th>
+                    <th class="text-right">p50</th>
+                    <th class="text-right">p75</th>
+                    <th class="text-right">p95</th>
+                    <th class="text-right">p99</th>
+                    <th class="text-right">Max</th>
+                </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="(k, v) in vm.servicesStats">
-                <td>{{k}}</td>
-                <td class="text-right">{{v.count}}</td>
-                <td class="text-right">{{v.mean * 1000 | number:0}}</td>
-                <td class="text-right">{{v.min * 1000 | number:0}}</td>
-                <td class="text-right">{{v.p50 * 1000 | number:0}}</td>
-                <td class="text-right">{{v.p75 * 1000 | number:0}}</td>
-                <td class="text-right">{{v.p95 * 1000 | number:0}}</td>
-                <td class="text-right">{{v.p99 * 1000 | number:0}}</td>
-                <td class="text-right">{{v.max * 1000 | number:0}}</td>
-            </tr>
+                <tr ng-repeat="(k, v) in vm.servicesStats">
+                    <td>{{k}}</td>
+                    <td class="text-right">{{v.count}}</td>
+                    <td class="text-right">{{v.mean * 1000 | number:0}}</td>
+                    <td class="text-right">{{v.min * 1000 | number:0}}</td>
+                    <td class="text-right">{{v.p50 * 1000 | number:0}}</td>
+                    <td class="text-right">{{v.p75 * 1000 | number:0}}</td>
+                    <td class="text-right">{{v.p95 * 1000 | number:0}}</td>
+                    <td class="text-right">{{v.p99 * 1000 | number:0}}</td>
+                    <td class="text-right">{{v.max * 1000 | number:0}}</td>
+                </tr>
             </tbody>
         </table>
     </div>
-    
+
     <h3>Ehcache statistics</h3>
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
-            <tr>
-                <th>Cache name</th>
-                <th class="text-right">Objects</th>
-                <th class="text-right">Hits</th>
-                <th class="text-right">Misses</th>
-                <th class="text-right">Eviction count</th>
-                <th class="text-right">Mean get time (ms)</th>
-            </tr>
+                <tr>
+                    <th>Cache name</th>
+                    <th class="text-right">Objects</th>
+                    <th class="text-right">Hits</th>
+                    <th class="text-right">Misses</th>
+                    <th class="text-right">Eviction count</th>
+                    <th class="text-right">Mean get time (ms)</th>
+                </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="(k, v) in vm.cachesStats" ng-once>
-                <td>{{v.name}}</td>
-                <td class="text-right">{{vm.metrics.gauges[k + '.objects'].value}}</td>
-                <td class="text-right">{{vm.metrics.gauges[k + '.hits'].value}}</td>
-                <td class="text-right">{{vm.metrics.gauges[k + '.misses'].value}}</td>
-                <td class="text-right">{{vm.metrics.gauges[k + '.eviction-count'].value}}</td>
-                <td class="text-right">{{vm.metrics.gauges[k + '.mean-get-time'].value | number:2}}</td>
-            </tr>
+                <tr ng-repeat="(k, v) in vm.cachesStats" ng-once>
+                    <td>{{v.name}}</td>
+                    <td class="text-right">{{vm.metrics.gauges[k + '.objects'].value}}</td>
+                    <td class="text-right">{{vm.metrics.gauges[k + '.hits'].value}}</td>
+                    <td class="text-right">{{vm.metrics.gauges[k + '.misses'].value}}</td>
+                    <td class="text-right">{{vm.metrics.gauges[k + '.eviction-count'].value}}</td>
+                    <td class="text-right">{{vm.metrics.gauges[k + '.mean-get-time'].value | number:2}}</td>
+                </tr>
             </tbody>
         </table>
     </div>
-    
+
     <h3 ng-show="vm.metrics.gauges['HikariPool-0.pool.TotalConnections'].value > 0">DataSource statistics (time in millisecond)</h3>
     <div class="table-responsive" ng-show="vm.metrics.gauges['HikariPool-0.pool.TotalConnections'].value > 0">
         <table class="table table-striped">

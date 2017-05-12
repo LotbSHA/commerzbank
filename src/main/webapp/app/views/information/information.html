@@ -1,0 +1,43 @@
+<div class="well">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="container-sc">
+                <div class="carousel">
+                    <div class="item a passive">A</div>
+                    <div class="item b passive">B</div>
+                    <div class="item c passive">C</div>
+                    <div class="item d passive">D</div>
+                    <div class="item e passive">E</div>
+                </div>
+            </div>
+            <div class="next">Next</div>
+            <div class="prev">Prev</div>
+        </div>
+    </div>
+</div>
+<script>
+    var carousel = $(".carousel"),
+        currdeg = 0;
+
+    $(".next").on("click", {
+        d: "n"
+    }, rotate);
+    $(".prev").on("click", {
+        d: "p"
+    }, rotate);
+
+    function rotate(e) {
+        if (e.data.d == "n") {
+            currdeg = currdeg - 72;
+        }
+        if (e.data.d == "p") {
+            currdeg = currdeg + 72;
+        }
+        carousel.css({
+            "-webkit-transform": "rotateY(" + currdeg + "deg)",
+            "-moz-transform": "rotateY(" + currdeg + "deg)",
+            "-o-transform": "rotateY(" + currdeg + "deg)",
+            "transform": "rotateY(" + currdeg + "deg)"
+        });
+    }
+</script>

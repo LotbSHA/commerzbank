@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#/"><span>Commerzbank</span> <span class="navbar-version">v{{VERSION}}</span></a>
+            <a class="navbar-brand" href="#/"><img class="" src="content/images/logo_big_svg.svg" height="36" width="228px"></a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse" uib-collapse="vm.navCollapsed" ng-switch="vm.isAuthenticated()">
             <ul class="nav navbar-nav navbar-right">
@@ -47,17 +47,17 @@
                             &#xA0;<span>Settings</span></a></li>
                         <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="password" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-lock"></span>
                             &#xA0;<span>Password</span></a></li>
-                            <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="sessions" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-cloud"></span>
+                        <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="sessions" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-cloud"></span>
                             &#xA0;<span>Sessions</span></a></li>
-                                <li ui-sref-active="active" ng-switch-when="true">
-                                    <a href="" ng-click="vm.logout()" id="logout" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-log-out"></span> &#xA0;
+                        <li ui-sref-active="active" ng-switch-when="true">
+                            <a href="" ng-click="vm.logout()" id="logout" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-log-out"></span> &#xA0;
                                         <span>Sign out</span></a>
-                                </li>
-                                <li ui-sref-active="active" ng-switch-when="false">
-                                    <a href="" ng-click="vm.login()" id="login" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-log-in"></span> &#xA0;
+                        </li>
+                        <li ui-sref-active="active" ng-switch-when="false">
+                            <a href="" ng-click="vm.login()" id="login" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-log-in"></span> &#xA0;
                                         <span>Sign in</span></a>
-                                </li>
-                                <li ui-sref-active="active" ng-switch-when="false"><a ui-sref="register" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>
+                        </li>
+                        <li ui-sref-active="active" ng-switch-when="false"><a ui-sref="register" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>
                             &#xA0;<span>Register</span></a></li>
                     </ul>
                 </li>
@@ -70,17 +70,17 @@
                         </span>
                     </a>
                     <ul class="dropdown-menu" uib-dropdown-menu>
-                                <li ui-sref-active="active">
-                                    <a ui-sref="cg-metrics" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-dashboard"></span> &#xA0;
+                        <li ui-sref-active="active">
+                            <a ui-sref="cg-metrics" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-dashboard"></span> &#xA0;
                                         <span>Metrics</span></a>
-                                </li>
-                                <li ui-sref-active="active">
-                                    <a ui-sref="cg-health" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-heart"></span> &#xA0;
+                        </li>
+                        <li ui-sref-active="active">
+                            <a ui-sref="cg-health" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-heart"></span> &#xA0;
                                         <span>Health</span></a>
-                                </li>
-                                <li ui-sref-active="active"><a ui-sref="logs" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-tasks"></span>
+                        </li>
+                        <li ui-sref-active="active"><a ui-sref="logs" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-tasks"></span>
                             &#xA0;<span>Logs</span></a></li>
-                                <!-- appswift-needle-add-element-to-ops-menu - Appswift will add entities to the ops menu here -->
+                        <!-- appswift-needle-add-element-to-ops-menu - Appswift will add entities to the ops menu here -->
                     </ul>
                 </li>
                 <li ng-class="{active: vm.vm.$state.includes('admin')}" ng-switch-when="true" has-authority="ROLE_ADMIN" uib-dropdown class="dropdown pointer">
@@ -92,23 +92,23 @@
                         </span>
                     </a>
                     <ul class="dropdown-menu" uib-dropdown-menu>
-                                <li ui-sref-active="active">
-                                    <a ui-sref="user-management" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-user"></span> &#xA0;
+                        <li ui-sref-active="active">
+                            <a ui-sref="user-management" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-user"></span> &#xA0;
                                         <span>User management</span></a>
-                                </li>
-                                <li ui-sref-active="active">
-                                    <a ui-sref="cg-configuration" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-list-alt"></span> &#xA0;
+                        </li>
+                        <li ui-sref-active="active">
+                            <a ui-sref="cg-configuration" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-list-alt"></span> &#xA0;
                                         <span>Configuration</span></a>
-                                </li>
-                                <li ui-sref-active="active"><a ui-sref="audits" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-bell"></span>
+                        </li>
+                        <li ui-sref-active="active"><a ui-sref="audits" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-bell"></span>
                             &#xA0;<span>Audits</span></a></li>
-                                <li ng-hide="vm.inProduction" ui-sref-active="active"><a ui-sref="docs" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-book"></span>
+                        <li ng-hide="vm.inProduction" ui-sref-active="active"><a ui-sref="docs" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-book"></span>
                             &#xA0;<span>API</span></a></li>
-                                <!-- jhipster-needle-add-element-to-admin-menu - JHipster will add entities to the admin menu here -->
-                                    <li ng-hide="vm.inProduction">
-                                        <a href='/h2-console' target="_tab" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-hdd"></span> &#xA0;
+                        <!-- jhipster-needle-add-element-to-admin-menu - JHipster will add entities to the admin menu here -->
+                        <li ng-hide="vm.inProduction">
+                            <a href='/h2-console' target="_tab" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-hdd"></span> &#xA0;
                                             <span>Database</span></a>
-                                    </li>
+                        </li>
                     </ul>
                 </li>
             </ul>
